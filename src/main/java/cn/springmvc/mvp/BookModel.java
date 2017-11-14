@@ -1,4 +1,4 @@
-package cn.springmvc.model;
+package cn.springmvc.mvp;
 
 public class BookModel implements IBookModel{
 

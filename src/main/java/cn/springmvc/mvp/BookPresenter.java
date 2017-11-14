@@ -1,4 +1,4 @@
-package cn.springmvc.model;
+package cn.springmvc.mvp;
 
 public class BookPresenter implements IBookPresenter {
     private final IBookModel bookModel;

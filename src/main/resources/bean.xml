@@ -2,8 +2,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="bookModel" class="cn.springmvc.model.BookModel"/>
-    <bean id="bookPresenter" class="cn.springmvc.model.BookPresenter">
+    <bean id="bookModel" class="cn.springmvc.mvp.BookModel"/>
+    <bean id="bookPresenter" class="cn.springmvc.mvp.BookPresenter">
         <constructor-arg ref="bookModel"/>
     </bean>
 </beans>

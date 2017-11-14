@@ -1,6 +1,5 @@
-package cn.springmvc;
+package cn.springmvc.mvp;
 
-import cn.springmvc.model.IBookPresenter;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
