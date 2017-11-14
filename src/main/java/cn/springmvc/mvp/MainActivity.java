@@ -5,9 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainActivity {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-        IBookPresenter accountService = (IBookPresenter) context.getBean("bookPresenter");
-        accountService.showBookInfo();
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        IBookPresenter bookPresenter = (IBookPresenter) context.getBean("bookPresenter");
+        bookPresenter.showBookInfo();
 
     }
 }
