@@ -1,27 +1,42 @@
 package cn.springmvc.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "book")
 public class BookObj {
-    private String userName;
-    private String password;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-    public BookObj(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
+    @Column(name = "bookName")
+    private String bookName;
+
+    @Column(name = "pageNum")
+    private String pageNum;
+
+    public Long getId() {
+        return id;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public String getBookName() {
+        return bookName;
     }
 
-    public String getPassword() {
-        return password;
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getPageNum() {
+        return pageNum;
     }
+
+    public void setPageNum(String pageNum) {
+        this.pageNum = pageNum;
+    }
+
 }
