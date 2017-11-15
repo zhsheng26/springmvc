@@ -31,6 +31,13 @@ dependencies {
     providedCompile "javax.el:javax.el-api:3.0.0"
     providedCompile "javax.servlet:javax.servlet-api:3.1.0"
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.6'
+    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.2.12.Final'
+
+
 }
 
 compileKotlin {
