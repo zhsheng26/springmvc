@@ -20,6 +20,5 @@
     <mvc:default-servlet-handler/>
 
     <mvc:annotation-driven/>
-
-    <context:component-scan base-package="cn.springmvc"/>
+    <context:component-scan base-package="cn.springmvc.controller"/>
 </beans>

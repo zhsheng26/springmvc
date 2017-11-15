@@ -3,18 +3,27 @@ package cn.springmvc.repository;
 import cn.springmvc.entity.BookObj;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Repository
 public class BookRepositoryIml implements IBookRepository {
-    @Autowired
+    @Resource
     private SessionFactory sessionFactory;
 
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     private Session getCurrentSession() {
-        return this.sessionFactory.openSession();
+        return this.sessionFactory.getCurrentSession();
     }
 
     @Override
@@ -37,6 +46,7 @@ public class BookRepositoryIml implements IBookRepository {
         getCurrentSession().persist(entity);
     }
 
+    @Transactional
     @Override
     public Long save(BookObj entity) {
         return (Long) getCurrentSession().save(entity);

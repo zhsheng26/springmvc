@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-    <!--********************************************配置hibernate********************************************-->
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <context:component-scan base-package="cn.springmvc.entity"/>
+    <context:component-scan base-package="cn.springmvc.repository"/>
+    <context:component-scan base-package="cn.springmvc.service"/>
 
+    <!--********************************************配置hibernate********************************************-->
     <!--扫描配置文件(这里指向的是之前配置的那个config.properties)-->
     <context:property-placeholder location="classpath:/config.properties"/>
 
@@ -38,6 +41,8 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <!-- 对数据源进行事务管理 -->
+    <tx:annotation-driven/>
 
     <bean id="bookModel" class="cn.springmvc.mvp.BookModel"/>
     <bean id="bookPresenter" class="cn.springmvc.mvp.BookPresenter">
