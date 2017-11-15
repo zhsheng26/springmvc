@@ -1,18 +1,17 @@
 <%--
   Created by IntelliJ IDEA.
   User: zhangsheng
-  Date: 2017/11/14
-  Time: 09:55
+  Date: 2017/11/15
+  Time: 10:22
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>主页</title>
+    <title>登录</title>
 </head>
 <body>
-<h1>欢迎</h1>
-<h2><a href="<c:url value="/login"/>">登录</a></h2>
+<h1>登录</h1>
+<img src="${contextPath}/resources/images/my_header.jpg" width="100px" height="100px">
 </body>
 </html>

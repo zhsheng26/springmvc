@@ -9,6 +9,9 @@
                  prefix="/WEB-INF/pages/"
                  suffix=".jsp"/>
     </mvc:view-resolvers>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <!--<mvc:resources mapping="/images/**" location="/resources/images/"/>-->
+    <mvc:default-servlet-handler/>
     <context:component-scan base-package="cn.springmvc.controller"/>
     <mvc:annotation-driven/>
 </beans>

@@ -1,26 +1,30 @@
 package cn.springmvc.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class ViewController {
-    @RequestMapping("/greeting/{name}")
-    public String greeting(@PathVariable("name") String name) {
-        return "hello, " + name;
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String index() {
+        return "index";
     }
 
-    @RequestMapping("/hello")
-    public String hello(@RequestParam(defaultValue = "苟") String name, Model model) {
-        model.addAttribute("name", name);
-        return "hello";
+    @RequestMapping("/login")
+    public ModelAndView index(HttpServletRequest request) {
+        ModelAndView modelAndView = new ModelAndView();
+        String contextPath = request.getContextPath();
+        modelAndView.addObject("contextPath", contextPath);
+        modelAndView.setViewName("login");
+        return modelAndView;
     }
 
     @RequestMapping("/index")
-    public String index() {
+    public String home() {
         return "index";
     }
 }
